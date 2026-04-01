@@ -14,7 +14,164 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      flashcards: {
+        Row: {
+          created_at: string
+          ease_factor: number | null
+          example: string | null
+          example_meaning: string | null
+          id: string
+          interval_days: number | null
+          level: string | null
+          meaning: string
+          next_review: string
+          reading: string | null
+          repetitions: number | null
+          updated_at: string
+          user_id: string
+          word: string
+        }
+        Insert: {
+          created_at?: string
+          ease_factor?: number | null
+          example?: string | null
+          example_meaning?: string | null
+          id?: string
+          interval_days?: number | null
+          level?: string | null
+          meaning: string
+          next_review?: string
+          reading?: string | null
+          repetitions?: number | null
+          updated_at?: string
+          user_id: string
+          word: string
+        }
+        Update: {
+          created_at?: string
+          ease_factor?: number | null
+          example?: string | null
+          example_meaning?: string | null
+          id?: string
+          interval_days?: number | null
+          level?: string | null
+          meaning?: string
+          next_review?: string
+          reading?: string | null
+          repetitions?: number | null
+          updated_at?: string
+          user_id?: string
+          word?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          daily_minutes: number | null
+          display_name: string | null
+          id: string
+          jlpt_level: string | null
+          preferences: Json | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          daily_minutes?: number | null
+          display_name?: string | null
+          id?: string
+          jlpt_level?: string | null
+          preferences?: Json | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          daily_minutes?: number | null
+          display_name?: string | null
+          id?: string
+          jlpt_level?: string | null
+          preferences?: Json | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      reviews: {
+        Row: {
+          flashcard_id: string
+          id: string
+          rating: number
+          reviewed_at: string
+          user_id: string
+        }
+        Insert: {
+          flashcard_id: string
+          id?: string
+          rating: number
+          reviewed_at?: string
+          user_id: string
+        }
+        Update: {
+          flashcard_id?: string
+          id?: string
+          rating?: number
+          reviewed_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reviews_flashcard_id_fkey"
+            columns: ["flashcard_id"]
+            isOneToOne: false
+            referencedRelation: "flashcards"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_progress: {
+        Row: {
+          created_at: string
+          current_level: string | null
+          id: string
+          last_study_date: string | null
+          streak: number | null
+          total_study_minutes: number | null
+          updated_at: string
+          user_id: string
+          words_learned: number | null
+          xp: number | null
+        }
+        Insert: {
+          created_at?: string
+          current_level?: string | null
+          id?: string
+          last_study_date?: string | null
+          streak?: number | null
+          total_study_minutes?: number | null
+          updated_at?: string
+          user_id: string
+          words_learned?: number | null
+          xp?: number | null
+        }
+        Update: {
+          created_at?: string
+          current_level?: string | null
+          id?: string
+          last_study_date?: string | null
+          streak?: number | null
+          total_study_minutes?: number | null
+          updated_at?: string
+          user_id?: string
+          words_learned?: number | null
+          xp?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
