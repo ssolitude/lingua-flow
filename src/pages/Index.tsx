@@ -1,16 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import AppLayout from "@/components/AppLayout";
+import RoadmapTimeline from "@/components/RoadmapTimeline";
+import DailyStats from "@/components/DailyStats";
+import StudyQueue from "@/components/StudyQueue";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <AppLayout>
+      <div className="mb-8">
+        <h1 className="font-display text-2xl font-bold text-foreground">
+          おはよう、<span className="text-gradient-primary">Student</span>
+        </h1>
+        <p className="text-sm text-muted-foreground mt-1">
+          You're on a 12-day streak. Keep going! 🔥
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Main column */}
+        <div className="lg:col-span-2 space-y-6">
+          <StudyQueue />
+          <RoadmapTimeline />
+        </div>
+
+        {/* Sidebar */}
+        <div>
+          <DailyStats />
+        </div>
+      </div>
+    </AppLayout>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
