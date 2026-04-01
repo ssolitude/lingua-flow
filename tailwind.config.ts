@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Inter', 'Noto Sans JP', 'sans-serif'],
+        body: ['Inter', 'Noto Sans JP', 'sans-serif'],
+        japanese: ['Noto Sans JP', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +51,25 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          foreground: "hsl(var(--info-foreground))",
+        },
+        jlpt: {
+          n5: "hsl(var(--n5))",
+          n4: "hsl(var(--n4))",
+          n3: "hsl(var(--n3))",
+          n2: "hsl(var(--n2))",
+          n1: "hsl(var(--n1))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
